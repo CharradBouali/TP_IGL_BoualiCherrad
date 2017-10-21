@@ -6,11 +6,15 @@ public class VectorHelper
 	public VectorHelper(int taille)
 	{
 		this.tab=new int[taille];
+		for (int i=0;i<taille;i++)
+		{
+			tab[i]=2*i+3;
+		}
 	}
 	
 
 //---------------------------------------------------------------------------------//
-	public void SommeVect(int []v,int []t)  
+	public int[] SommeVect(int []v,int []t)  
 
 	{
 		//fait la somme de 2 vecteurs
@@ -28,6 +32,7 @@ public class VectorHelper
 			catch (DifferentTailleException e) 
 			{
 				System.out.print("Exception:Les deux vecteurs ne sont pas de taille identique");
+			    return tab;
 			}
 	
 			
@@ -37,11 +42,11 @@ public class VectorHelper
 			for (i=0;i<j;i++)
 			{
 				this.tab[i]=t[i]+v[i];
-				System.out.print("tab["+i+"]="+tab[i]+"\n");
+				//System.out.print("tab["+i+"]="+tab[i]+"\n");
 			}
 		}
 		
-		
+		return tab;
 	}
 //---------------------------------------------------------------------------------//
 	/**
