@@ -15,6 +15,11 @@ public class VectorHelper
 	
 
 //---------------------------------------------------------------------------------//
+	/**
+	 * @param v : contient le premier vecteur
+	 * @param t : contient le deuxieme vecteur 
+	 * @return : la somme des deux vecteurs 
+	 */
 	public int[] SommeVect(int []v,int []t)  
 
 	{
@@ -67,6 +72,9 @@ public class VectorHelper
 
 //----------------------------------------------------------------------------------//
 
+    /**
+     * @return le maximum d'un vecteur 
+     */
     public int max_vect()
     {   int m=0;
         
@@ -94,6 +102,11 @@ public class VectorHelper
     }
 	//-----------------------------------------------------------------------------------//
 
+/** 
+ * Fonction pour inverser les élements du vecteur 
+ * @param v contient le vecteur à inverser 
+ * 
+ */
 public void inverse (int []v)
 {   tab=v;
 
@@ -119,6 +132,11 @@ public void inverse (int []v)
 
 
 //-----------------------------------------------------------------------------------//
+
+/**
+ * Fonction pour trier les élements du vecteur 
+ * @param v contient le vecteur à trier
+ */
 public void trier (int []v) 
 {
  tab = v;
@@ -127,12 +145,12 @@ public void trier (int []v)
 		boolean permut;
  
 		do {
-			// hypothèse : le tableau est trié
+			// hypothÃ¨se : le tableau est triÃ©
 			permut = false;
 			for (int i = 0; i < longueur - 1; i++) {
-				// Teste si 2 éléments successifs sont dans le bon ordre ou non
+				// Teste si 2 Ã©lÃ©ments successifs sont dans le bon ordre ou non
 				if (tab[i] > tab[i + 1]) {
-					// s'ils ne le sont pas, on échange leurs positions
+					// s'ils ne le sont pas, on Ã©change leurs positions
 					tampon = tab[i];
 					tab[i] = tab[i + 1];
 					tab[i + 1] = tampon;
