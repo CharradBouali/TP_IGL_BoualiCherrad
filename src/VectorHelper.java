@@ -1,5 +1,5 @@
 
-//---------------------------------------------------------------------------/
+//----------------------------------------------------------------------------------//
 public class VectorHelper 
 {
 	private int []tab;
@@ -13,9 +13,17 @@ public class VectorHelper
 		}
 	}
 	
-
+//---------------------------------------------------------------------------------//	
+	public void affect(int val,int index) // affecter la valeur val dans tab à l'indice index
+	{
+		if (tab.length>index) 
+		{
+			tab[index]=val;
+		}
+		
+	}
 //---------------------------------------------------------------------------------//
-	public int[] SommeVect(int []v,int []t)  
+	public int[] SommeVect(int []v,int []t) throws DifferentTailleException  
 
 	{
 		//fait la somme de 2 vecteurs
@@ -25,25 +33,13 @@ public class VectorHelper
 		if (i!=j)
 		{
 			//exception
-			
-			try 
-			{
-				throw new DifferentTailleException();
-			} 
-			catch (DifferentTailleException e) 
-			{
-				System.out.print("Exception:Les deux vecteurs ne sont pas de taille identique");
-			    return tab;
-			}
-	
-			
+			throw new DifferentTailleException();					
 		}
 		else
 		{   this.tab=new int[i];
 			for (i=0;i<j;i++)
 			{
 				this.tab[i]=t[i]+v[i];
-				//System.out.print("tab["+i+"]="+tab[i]+"\n");
 			}
 		}
 		
@@ -94,10 +90,10 @@ public class VectorHelper
     }
 	//-----------------------------------------------------------------------------------//
 
-public void inverse (int []v)
-{   tab=v;
-
-        int i,j,x;
+public int[] inverse ()
+{   
+    
+	int i,j,x;
 	i=0;
 	j=tab.length-1;
 	
@@ -114,14 +110,13 @@ public void inverse (int []v)
 	{
 		System.out.print("tab["+i+"]="+tab[i]+"\n");
 	}
-
+return tab;
 }
 
 
 //-----------------------------------------------------------------------------------//
-public void trier (int []v) 
+public int[] trier () 
 {
- tab = v;
 		int longueur = tab.length;
 		int tampon = 0;
 		boolean permut;
@@ -146,6 +141,8 @@ public void trier (int []v)
 		{
 			System.out.print("tab["+i+"]="+tab[i]+"\n");
 		}
+return tab;
 }
+
 
 }

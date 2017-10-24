@@ -18,7 +18,12 @@ public class test {
 		v[2]=6;
 		v[3]=7;
 		
-		a.SommeVect(v, t);
+		try {
+			a.SommeVect(v, t);
+		} catch (DifferentTailleException e) {
+			System.out.print("Exception:Les deux vecteurs ne sont pas de taille identique");
+		    
+		}
 		a.fonction();
 
 	}

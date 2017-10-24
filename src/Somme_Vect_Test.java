@@ -1,5 +1,4 @@
 import static org.junit.Assert.*;
-
 import org.junit.Test;
 
 public class Somme_Vect_Test {
@@ -23,12 +22,17 @@ public class Somme_Vect_Test {
 		v[2]=6;
 		v[3]=7;
 		
-		res=a.SommeVect(v, t);	
+		try {
+			res=a.SommeVect(v, t);
+			assertEquals(res[0],4);
+			assertEquals(res[1],6);
+			assertEquals(res[2],8);
+			assertEquals(res[3],10);
+		} catch (DifferentTailleException e) {
+			System.out.print("Exception:Les deux vecteurs ne sont pas de taille identique");
+		    
+		}	
 		
-		assertEquals(res[0],4);
-		assertEquals(res[1],6);
-		assertEquals(res[2],8);
-		assertEquals(res[3],10);
 	}
 
 }
