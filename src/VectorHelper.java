@@ -1,4 +1,6 @@
 
+//----------------------------------------------------------------------------------//
+
 public class VectorHelper 
 {
 	private int []tab;
@@ -85,7 +87,10 @@ public class VectorHelper
     	}
     	return m;
     }
-    
+ //---------------------------------------------------------------------------//
+	/**
+	*@return le maximum d'un vecteur 
+	*/
     public int min_vect()
     {   int m=0;
         
