@@ -1,7 +1,6 @@
 import static org.junit.Assert.*;
-
 import org.junit.Test;
-import org.junit.runners.JUnit4;
+
 
 public class min_vect_Test {
 

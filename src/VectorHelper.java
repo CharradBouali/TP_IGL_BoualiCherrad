@@ -1,8 +1,12 @@
 
-//---------------------------------------------------------------------------/
+//----------------------------------------------------------------------------------//
+
 public class VectorHelper 
 {
 	private int []tab;
+	private int min;
+	private int max;
+	
 	
 	public VectorHelper(int taille)
 	{
@@ -13,9 +17,25 @@ public class VectorHelper
 		}
 	}
 	
-
+//---------------------------------------------------------------------------------//	
+	public void affect(int val,int index) // affecter la valeur val dans tab à l'indice index
+	{
+		if (tab.length>index) 
+		{
+			tab[index]=val;
+		}
+		
+	}
 //---------------------------------------------------------------------------------//
-	public int[] SommeVect(int []v,int []t)  
+
+	/**
+	 * @param v : contient le premier vecteur
+	 * @param t : contient le deuxieme vecteur 
+	 * @return : la somme des deux vecteurs 
+	 */ 
+
+	public int[] SommeVect(int []v,int []t) throws DifferentTailleException  
+
 
 	{
 		//fait la somme de 2 vecteurs
@@ -25,25 +45,13 @@ public class VectorHelper
 		if (i!=j)
 		{
 			//exception
-			
-			try 
-			{
-				throw new DifferentTailleException();
-			} 
-			catch (DifferentTailleException e) 
-			{
-				System.out.print("Exception:Les deux vecteurs ne sont pas de taille identique");
-			    return tab;
-			}
-	
-			
+			throw new DifferentTailleException();					
 		}
 		else
 		{   this.tab=new int[i];
 			for (i=0;i<j;i++)
 			{
 				this.tab[i]=t[i]+v[i];
-				//System.out.print("tab["+i+"]="+tab[i]+"\n");
 			}
 		}
 		
@@ -67,6 +75,9 @@ public class VectorHelper
 
 //----------------------------------------------------------------------------------//
 
+    /**
+     * @return le maximum d'un vecteur 
+     */
     public int max_vect()
     {   int m=0;
         
@@ -79,25 +90,47 @@ public class VectorHelper
     	}
     	return m;
     }
-    
+ //---------------------------------------------------------------------------//
+	/**
+	*@return le maximum d'un vecteur 
+	*/
     public int min_vect()
-    {   int m=0;
+    {   int m=-1;
         
         if(tab.length>0)  m=tab[0];
-        else m=-1;
         
+        { 
     	for(int i=1;i<tab.length;i++)
     	{
     		if (tab[i]<m)   m=tab[i];
     	}
+    	}
     	return m;
     }
+
+    
+    public int min_max()
+    {
+    	this.min=min_vect();
+    	this.max=max_vect();
+    	return 0;
+    }
+    
 	//-----------------------------------------------------------------------------------//
 
-public void inverse (int []v)
-{   tab=v;
 
-        int i,j,x;
+/** 
+ * Fonction pour inverser les Ã©lements du vecteur 
+ * @param v contient le vecteur Ã  inverser 
+ * 
+ */
+
+public int[] inverse ()
+{   
+    
+	int i,j,x;
+
+
 	i=0;
 	j=tab.length-1;
 	
@@ -115,24 +148,39 @@ public void inverse (int []v)
 		System.out.print("tab["+i+"]="+tab[i]+"\n");
 	}
 
+return tab;
+
 }
 
 
 //-----------------------------------------------------------------------------------//
-public void trier (int []v) 
+
+
+
+
+
+/**
+ * Fonction pour trier les Ã©lements du vecteur 
+ * @param v contient le vecteur Ã  trier
+ */
+
+public int[] trier () 
+
 {
- tab = v;
+
 		int longueur = tab.length;
 		int tampon = 0;
 		boolean permut;
  
 		do {
-			// hypothèse : le tableau est trié
+
+			// hypothÃÂ¨se : le tableau est triÃÂ©
 			permut = false;
 			for (int i = 0; i < longueur - 1; i++) {
-				// Teste si 2 éléments successifs sont dans le bon ordre ou non
+				// Teste si 2 ÃÂ©lÃÂ©ments successifs sont dans le bon ordre ou non
 				if (tab[i] > tab[i + 1]) {
-					// s'ils ne le sont pas, on échange leurs positions
+					// s'ils ne le sont pas, on ÃÂ©change leurs positions
+
 					tampon = tab[i];
 					tab[i] = tab[i + 1];
 					tab[i + 1] = tampon;
@@ -146,6 +194,27 @@ public void trier (int []v)
 		{
 			System.out.print("tab["+i+"]="+tab[i]+"\n");
 		}
+
+
+return tab;
 }
+
+public int getMin() {
+	return min;
+}
+
+public void SetMin(int min) {
+    min = min;
+}
+
+public int getMax() {
+	return max;
+}
+
+public void SetMax(int max) {
+	max = max;
+}
+
+
 
 }
