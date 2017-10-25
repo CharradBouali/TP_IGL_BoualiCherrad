@@ -108,10 +108,11 @@ public class VectorHelper
     	return m;
     }
     
-    public void min_max()
+    public int min_max()
     {
     	this.min=min_vect();
     	this.max=max_vect();
+    	return 0;
     }
     
 	//-----------------------------------------------------------------------------------//
