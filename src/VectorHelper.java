@@ -13,12 +13,18 @@ public class VectorHelper
 		this.tab=new int[taille];
 		for (int i=0;i<taille;i++)
 		{
-			tab[i]=2*i+1;
+			tab[i]=2*i+3;
 		}
 	}
 	
 //---------------------------------------------------------------------------------//	
-	public void affect(int val,int index) // affecter la valeur val dans tab à l'indice index
+	/**
+	 * affecter une valeur dans le tableau tab 
+	 * @param val :la valeur que l'on veut rajouter
+	 * @param index :l'indice de la valeur rajout�e
+	 */
+	
+	public void affect(int val,int index) // affecter la valeur val dans tab � l'indice index
 	{
 		if (tab.length>index) 
 		{
@@ -108,12 +114,24 @@ public class VectorHelper
     	return m;
     }
 
-    
-    public int min_max()
+//-----------------------------------------------------------------------------//   
+    public void min_max()
     {
-    	this.min=min_vect();
-    	this.max=max_vect();
-    	return 0;
+         min=-1;
+         max=-1;
+        
+        if(tab.length>0)  {
+        	min=tab[0];  max=tab[0];
+       
+        
+    	for(int i=1;i<tab.length;i++)
+    	{
+    		if (tab[i]>max)   max=tab[i];
+    		if (tab[i]<min)   min=tab[i];
+    	}
+    	
+        }
+    	
     }
     
 	//-----------------------------------------------------------------------------------//
@@ -174,7 +192,7 @@ public int[] trier ()
  
 		do {
 
-			// hypothÃÂ¨se : le tableau est triÃÂ©
+			// hypothese : le tableau est tri�
 			permut = false;
 			for (int i = 0; i < longueur - 1; i++) {
 				// Teste si 2 ÃÂ©lÃÂ©ments successifs sont dans le bon ordre ou non

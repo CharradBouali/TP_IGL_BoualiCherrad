@@ -8,8 +8,11 @@ public class max_vect_Test {
 	public void max_vect_test() 
 	{
 		VectorHelper a=new VectorHelper(5);
-		int max=a.max_vect();
-		assertEquals(max,11);
+		
+		a.min_max();
+		assertEquals(a.getMax(),11);
+		
+		assertEquals(a.max_vect(),11);
 	}
 
 }

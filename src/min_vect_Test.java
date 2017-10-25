@@ -8,8 +8,11 @@ public class min_vect_Test {
 	public void min_vect_test() 
 	{
 		VectorHelper a=new VectorHelper(5);
-		int min=a.min_vect();
-		assertEquals(min,3);
+		a.min_max();
+
+		assertEquals(a.getMin(),3);
+		
+		assertEquals(a.min_vect(),3);
 	}
 
 }
