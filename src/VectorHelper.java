@@ -13,7 +13,7 @@ public class VectorHelper
 		this.tab=new int[taille];
 		for (int i=0;i<taille;i++)
 		{
-			tab[i]=2*i+3;
+			tab[i]=2*i+1;
 		}
 	}
 	
@@ -107,6 +107,7 @@ public class VectorHelper
     	}
     	return m;
     }
+
     
     public int min_max()
     {
@@ -129,6 +130,7 @@ public int[] inverse ()
     
 	int i,j,x;
 
+
 	i=0;
 	j=tab.length-1;
 	
@@ -145,11 +147,16 @@ public int[] inverse ()
 	{
 		System.out.print("tab["+i+"]="+tab[i]+"\n");
 	}
+
 return tab;
+
 }
 
 
 //-----------------------------------------------------------------------------------//
+
+
+
 
 
 /**
@@ -160,17 +167,20 @@ return tab;
 public int[] trier () 
 
 {
+
 		int longueur = tab.length;
 		int tampon = 0;
 		boolean permut;
  
 		do {
+
 			// hypothÃÂ¨se : le tableau est triÃÂ©
 			permut = false;
 			for (int i = 0; i < longueur - 1; i++) {
 				// Teste si 2 ÃÂ©lÃÂ©ments successifs sont dans le bon ordre ou non
 				if (tab[i] > tab[i + 1]) {
 					// s'ils ne le sont pas, on ÃÂ©change leurs positions
+
 					tampon = tab[i];
 					tab[i] = tab[i + 1];
 					tab[i + 1] = tampon;
@@ -184,6 +194,8 @@ public int[] trier ()
 		{
 			System.out.print("tab["+i+"]="+tab[i]+"\n");
 		}
+
+
 return tab;
 }
 
@@ -202,6 +214,7 @@ public int getMax() {
 public void SetMax(int max) {
 	max = max;
 }
+
 
 
 }
