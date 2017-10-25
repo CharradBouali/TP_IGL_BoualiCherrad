@@ -14,7 +14,7 @@ public class VectorHelper
 	}
 	
 //---------------------------------------------------------------------------------//	
-	public void affect(int val,int index) // affecter la valeur val dans tab � l'indice index
+	public void affect(int val,int index) // affecter la valeur val dans tab à l'indice index
 	{
 		if (tab.length>index) 
 		{
@@ -23,7 +23,15 @@ public class VectorHelper
 		
 	}
 //---------------------------------------------------------------------------------//
+
+	/**
+	 * @param v : contient le premier vecteur
+	 * @param t : contient le deuxieme vecteur 
+	 * @return : la somme des deux vecteurs 
+	 */ 
+
 	public int[] SommeVect(int []v,int []t) throws DifferentTailleException  
+
 
 	{
 		//fait la somme de 2 vecteurs
@@ -63,6 +71,9 @@ public class VectorHelper
 
 //----------------------------------------------------------------------------------//
 
+    /**
+     * @return le maximum d'un vecteur 
+     */
     public int max_vect()
     {   int m=0;
         
@@ -90,10 +101,18 @@ public class VectorHelper
     }
 	//-----------------------------------------------------------------------------------//
 
+
+/** 
+ * Fonction pour inverser les Ã©lements du vecteur 
+ * @param v contient le vecteur Ã  inverser 
+ * 
+ */
+
 public int[] inverse ()
 {   
     
 	int i,j,x;
+
 	i=0;
 	j=tab.length-1;
 	
@@ -115,19 +134,27 @@ return tab;
 
 
 //-----------------------------------------------------------------------------------//
+
+
+/**
+ * Fonction pour trier les Ã©lements du vecteur 
+ * @param v contient le vecteur Ã  trier
+ */
+
 public int[] trier () 
+
 {
 		int longueur = tab.length;
 		int tampon = 0;
 		boolean permut;
  
 		do {
-			// hypothèse : le tableau est trié
+			// hypothÃÂ¨se : le tableau est triÃÂ©
 			permut = false;
 			for (int i = 0; i < longueur - 1; i++) {
-				// Teste si 2 éléments successifs sont dans le bon ordre ou non
+				// Teste si 2 ÃÂ©lÃÂ©ments successifs sont dans le bon ordre ou non
 				if (tab[i] > tab[i + 1]) {
-					// s'ils ne le sont pas, on échange leurs positions
+					// s'ils ne le sont pas, on ÃÂ©change leurs positions
 					tampon = tab[i];
 					tab[i] = tab[i + 1];
 					tab[i + 1] = tampon;
