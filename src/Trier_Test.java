@@ -12,7 +12,7 @@ public class Trier_Test {
 		
 		a.affect(13, 0);
 		a.affect(12, 1);
-		a.affect(19, 2);
+		a.affect(21, 2);
 		a.affect(6, 3);
 		
 		res=a.trier();
@@ -20,7 +20,7 @@ public class Trier_Test {
 		assertEquals(res[0],6);
 		assertEquals(res[1],12);
 		assertEquals(res[2],13);
-		assertEquals(res[3],19);
+		assertEquals(res[3],21);
 		
 	}
 
