@@ -190,7 +190,7 @@ public int getMin() {
 }
 
 public void SetMin(int min) {
-	this.min = min;
+    min = min;
 }
 
 public int getMax() {
@@ -198,7 +198,7 @@ public int getMax() {
 }
 
 public void SetMax(int max) {
-	this.max = max;
+	max = max;
 }
 
 
