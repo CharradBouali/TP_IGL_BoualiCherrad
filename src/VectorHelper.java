@@ -72,7 +72,7 @@ public class VectorHelper
 //----------------------------------------------------------------------------------//
 
     /**
-     * @return le maximum d'un vecteur 
+     * @return le maximum du vecteur tab
      */
     public int max_vect()
     {   int m=0;
