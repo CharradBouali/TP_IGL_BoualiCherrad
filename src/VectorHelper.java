@@ -95,14 +95,15 @@ public class VectorHelper
 	*@return le maximum d'un vecteur 
 	*/
     public int min_vect()
-    {   int m=0;
+    {   int m=-1;
         
         if(tab.length>0)  m=tab[0];
-        else m=-1;
         
+        { 
     	for(int i=1;i<tab.length;i++)
     	{
     		if (tab[i]<m)   m=tab[i];
+    	}
     	}
     	return m;
     }
