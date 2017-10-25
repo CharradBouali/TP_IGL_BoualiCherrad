@@ -1,5 +1,5 @@
 
-//---------------------------------------------------------------------------/
+//----------------------------------------------------------------------------------//
 public class VectorHelper 
 {
 	private int []tab;
@@ -13,14 +13,25 @@ public class VectorHelper
 		}
 	}
 	
-
+//---------------------------------------------------------------------------------//	
+	public void affect(int val,int index) // affecter la valeur val dans tab à l'indice index
+	{
+		if (tab.length>index) 
+		{
+			tab[index]=val;
+		}
+		
+	}
 //---------------------------------------------------------------------------------//
+
 	/**
 	 * @param v : contient le premier vecteur
 	 * @param t : contient le deuxieme vecteur 
 	 * @return : la somme des deux vecteurs 
-	 */
-	public int[] SommeVect(int []v,int []t)  
+	 */ 
+
+	public int[] SommeVect(int []v,int []t) throws DifferentTailleException  
+
 
 	{
 		//fait la somme de 2 vecteurs
@@ -30,25 +41,13 @@ public class VectorHelper
 		if (i!=j)
 		{
 			//exception
-			
-			try 
-			{
-				throw new DifferentTailleException();
-			} 
-			catch (DifferentTailleException e) 
-			{
-				System.out.print("Exception:Les deux vecteurs ne sont pas de taille identique");
-			    return tab;
-			}
-	
-			
+			throw new DifferentTailleException();					
 		}
 		else
 		{   this.tab=new int[i];
 			for (i=0;i<j;i++)
 			{
 				this.tab[i]=t[i]+v[i];
-				//System.out.print("tab["+i+"]="+tab[i]+"\n");
 			}
 		}
 		
@@ -102,15 +101,18 @@ public class VectorHelper
     }
 	//-----------------------------------------------------------------------------------//
 
+
 /** 
- * Fonction pour inverser les élements du vecteur 
- * @param v contient le vecteur à inverser 
+ * Fonction pour inverser les Ã©lements du vecteur 
+ * @param v contient le vecteur Ã  inverser 
  * 
  */
-public void inverse (int []v)
-{   tab=v;
 
-        int i,j,x;
+public int[] inverse ()
+{   
+    
+	int i,j,x;
+
 	i=0;
 	j=tab.length-1;
 	
@@ -127,30 +129,32 @@ public void inverse (int []v)
 	{
 		System.out.print("tab["+i+"]="+tab[i]+"\n");
 	}
-
+return tab;
 }
 
 
 //-----------------------------------------------------------------------------------//
 
+
 /**
- * Fonction pour trier les élements du vecteur 
- * @param v contient le vecteur à trier
+ * Fonction pour trier les Ã©lements du vecteur 
+ * @param v contient le vecteur Ã  trier
  */
-public void trier (int []v) 
+
+public int[] trier () 
+
 {
- tab = v;
 		int longueur = tab.length;
 		int tampon = 0;
 		boolean permut;
  
 		do {
-			// hypothÃ¨se : le tableau est triÃ©
+			// hypothÃÂ¨se : le tableau est triÃÂ©
 			permut = false;
 			for (int i = 0; i < longueur - 1; i++) {
-				// Teste si 2 Ã©lÃ©ments successifs sont dans le bon ordre ou non
+				// Teste si 2 ÃÂ©lÃÂ©ments successifs sont dans le bon ordre ou non
 				if (tab[i] > tab[i + 1]) {
-					// s'ils ne le sont pas, on Ã©change leurs positions
+					// s'ils ne le sont pas, on ÃÂ©change leurs positions
 					tampon = tab[i];
 					tab[i] = tab[i + 1];
 					tab[i + 1] = tampon;
@@ -164,6 +168,8 @@ public void trier (int []v)
 		{
 			System.out.print("tab["+i+"]="+tab[i]+"\n");
 		}
+return tab;
 }
+
 
 }
