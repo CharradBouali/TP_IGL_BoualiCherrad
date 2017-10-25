@@ -9,7 +9,7 @@ public class VectorHelper
 		this.tab=new int[taille];
 		for (int i=0;i<taille;i++)
 		{
-			tab[i]=2*i+3;
+			tab[i]=2*i+1;
 		}
 	}
 	
