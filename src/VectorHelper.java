@@ -2,6 +2,9 @@
 public class VectorHelper 
 {
 	private int []tab;
+	private int min;
+	private int max;
+	
 	
 	public VectorHelper(int taille)
 	{
@@ -98,6 +101,13 @@ public class VectorHelper
     	}
     	return m;
     }
+    
+    public void min_max()
+    {
+    	this.min=min_vect();
+    	this.max=max_vect();
+    }
+    
 	//-----------------------------------------------------------------------------------//
 
 
@@ -168,6 +178,22 @@ public int[] trier ()
 			System.out.print("tab["+i+"]="+tab[i]+"\n");
 		}
 return tab;
+}
+
+public int getMin() {
+	return min;
+}
+
+public void setMin(int min) {
+	this.min = min;
+}
+
+public int getMax() {
+	return max;
+}
+
+public void setMax(int max) {
+	this.max = max;
 }
 
 
