@@ -73,7 +73,7 @@ public class VectorHelper
 		int []res =new int[tab.length];
 		for(int i=0;i<tab.length;i++)
 		{
-			res[i]=2*tab[i]+1;
+			res[i]=2*tab[i]+3;
 			System.out.print("res["+i+"]="+res[i]+"\n");
 		}
 		return res;
@@ -82,7 +82,7 @@ public class VectorHelper
 //----------------------------------------------------------------------------------//
 
     /**
-     * @return le maximum d'un vecteur 
+     * @return le maximum du vecteur tab
      */
     public int max_vect()
     {   int m=0;
