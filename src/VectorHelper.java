@@ -1,6 +1,8 @@
 
 //----------------------------------------------------------------------------------//
-
+/**
+*VectorHelper est une classe représente le vecteur des elements
+**/
 public class VectorHelper 
 {
 	private int []tab;
@@ -21,10 +23,10 @@ public class VectorHelper
 	/**
 	 * affecter une valeur dans le tableau tab 
 	 * @param val :la valeur que l'on veut rajouter
-	 * @param index :l'indice de la valeur rajout�e
+	 * @param index :l'indice de la valeur rajoutée
 	 */
 	
-	public void affect(int val,int index) // affecter la valeur val dans tab � l'indice index
+	public void affect(int val,int index) // affecter la valeur val dans tab à  l'indice index
 	{
 		if (tab.length>index) 
 		{
@@ -35,9 +37,11 @@ public class VectorHelper
 //---------------------------------------------------------------------------------//
 
 	/**
+	*
 	 * @param v : contient le premier vecteur
 	 * @param t : contient le deuxieme vecteur 
 	 * @return : la somme des deux vecteurs 
+	 * Exemples : v={1,2,3} et t={2,5,6} => le resultat tab={3,7,9}
 	 */ 
 
 	public int[] SommeVect(int []v,int []t) throws DifferentTailleException  
@@ -67,13 +71,14 @@ public class VectorHelper
 	/**
 	 * applique la fonction f(x)=2x+1 aux elements de tab
 	 * @return un tableau contenant les images des elements de tab par la fonction f(x)=2x+1
+	 * Exemple tab={1,2,3} => le resultat res ={3,5,7}
 	 */
 	public int [] fonction()  //appliquer la fonction f(x)=2x+1 aux elements de tab
 	{
 		int []res =new int[tab.length];
 		for(int i=0;i<tab.length;i++)
 		{
-			res[i]=2*tab[i]+3;
+			res[i]=2*tab[i]+1;
 			System.out.print("res["+i+"]="+res[i]+"\n");
 		}
 		return res;
@@ -83,6 +88,7 @@ public class VectorHelper
 
     /**
      * @return le maximum du vecteur tab
+     *Exemple tab ={1,2,3} => max =3
      */
     public int max_vect()
     {   int m=0;
@@ -98,7 +104,8 @@ public class VectorHelper
     }
  //---------------------------------------------------------------------------//
 	/**
-	*@return le maximum d'un vecteur 
+	*@return le minimum d'un vecteur 
+	**Exemple tab ={1,2,3} => min =1
 	*/
     public int min_vect()
     {   int m=-1;
@@ -115,6 +122,10 @@ public class VectorHelper
     }
 
 //-----------------------------------------------------------------------------//   
+	/**
+	*La fonction donne le min et le max simultinement 
+	*
+	***/
     public void min_max()
     {
          min=-1;
@@ -138,9 +149,9 @@ public class VectorHelper
 
 
 /** 
- * Fonction pour inverser les Ã©lements du vecteur 
- * @param v contient le vecteur Ã  inverser 
- * 
+ * Fonction pour inverser les ÃƒÂ©lements du vecteur 
+ * @param v contient le vecteur ÃƒÂ  inverser 
+ * Exemple tab={1,2,3} => le resultat tab = {3,2,1}
  */
 
 public int[] inverse ()
@@ -178,8 +189,9 @@ return tab;
 
 
 /**
- * Fonction pour trier les Ã©lements du vecteur 
- * @param v contient le vecteur Ã  trier
+ * Fonction pour trier les ÃƒÂ©lements du vecteur 
+ * @param v contient le vecteur ÃƒÂ  trier
+ * Exemple tab ={1,7,6} => tab ={1,6,7} 
  */
 
 public int[] trier () 
@@ -192,12 +204,12 @@ public int[] trier ()
  
 		do {
 
-			// hypothese : le tableau est tri�
+			// hypothese : le tableau est trié
 			permut = false;
 			for (int i = 0; i < longueur - 1; i++) {
-				// Teste si 2 ÃÂ©lÃÂ©ments successifs sont dans le bon ordre ou non
+				// Teste si 2 ÃƒÂƒÃ‚Â©lÃƒÂƒÃ‚Â©ments successifs sont dans le bon ordre ou non
 				if (tab[i] > tab[i + 1]) {
-					// s'ils ne le sont pas, on ÃÂ©change leurs positions
+					// s'ils ne le sont pas, on ÃƒÂƒÃ‚Â©change leurs positions
 
 					tampon = tab[i];
 					tab[i] = tab[i + 1];
